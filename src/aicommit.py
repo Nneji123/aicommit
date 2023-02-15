@@ -21,7 +21,7 @@ def generate_commit_message(api_key: str, prompt: str) -> str:
     try:
         openai.api_key = api_key
         model_engine = "text-davinci-002"
-        prompt = f"I want you to act like a git commit message writer. Do not write things like 'if __name__==__main__'. I will input a git diff and your job is to convert it into a useful commit message. Do not preface the commit with anything, use the present tense, return a complete sentence, and do not repeat yourself: {prompt}"
+        prompt = f"What follows '-------' is a git diff for a potential commit. Reply with an appropriate git commit message(a Git commit message should be concise but also try to describe the important changes in the commit) and don't include any other text but the message in your response. ------- {prompt}"
         try:
             completions = openai.Completion.create(
                 engine=model_engine,

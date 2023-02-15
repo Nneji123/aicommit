@@ -45,7 +45,7 @@ env_marker_below_38 = "python_version < '3.8'"
 
 
 setup(
-    name="aicommit",
+    name="ai_commit",
     version=get_version("src"),
     url="https://github.com/Nneji123/aicommit",
     license="MIT",

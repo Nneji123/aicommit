@@ -7,7 +7,7 @@
 [![MIT licensed](https://img.shields.io/badge/license-MIT-green.svg)](https://raw.githubusercontent.com/Nneji123/aicommit/LICENSE)
 
 
-AICommits - An AI-powered git commit message generator written in python. Inspired by [@Nutlope](https://github.com/Nutlope/aicommits)
+AICommit - An AI-powered git commit message generator written in python. Inspired by [@Nutlope](https://github.com/Nutlope/aicommits)
 
 # Description
 
@@ -55,7 +55,7 @@ export OPENAI_API_KEY=YOUR_API_KEY
 2. install aicommit from pypi by running:
 
 ```bash
-pip install aicommit
+pip install ai_commit
 ```
 
 Then, run the script using the command `aicommit`.
