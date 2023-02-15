@@ -22,14 +22,19 @@ def generate_commit_message(api_key: str, prompt: str) -> str:
         openai.api_key = api_key
         model_engine = "text-davinci-002"
         prompt = f"I want you to act like a git commit message writer. Do not write things like 'if __name__==__main__'. I will input a git diff and your job is to convert it into a useful commit message. Do not preface the commit with anything, use the present tense, return a complete sentence, and do not repeat yourself: {prompt}"
-        completions = openai.Completion.create(
-            engine=model_engine,
-            prompt=prompt,
-            max_tokens=200,
-            n=1,
-            stop=None,
-            temperature=0.7,
-        )
+        try:
+            completions = openai.Completion.create(
+                engine=model_engine,
+                prompt=prompt,
+                max_tokens=200,
+                n=1,
+                stop=None,
+                temperature=0.7,
+            )
+        except openai.error.AuthenticationError as e:
+            error_message = f"OpenAI API Error: {e}"
+            print(error_message)
+            sys.exit(1)
 
         return completions.choices[0].text.strip().replace("\n", "")
     except APIConnectionError as e:
