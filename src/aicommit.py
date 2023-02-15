@@ -7,11 +7,6 @@ import openai
 from dotenv import load_dotenv
 from openai.error import APIConnectionError
 
-
-# from openai.api import API
-# text = openai.APIError
-# from openai.models import CompletionV1
-
 load_dotenv()
 
 OPENAI_KEY = os.getenv("OPENAI_API_KEY")
@@ -90,9 +85,9 @@ def main():
         print(prompt)
         sys.exit(1)
 
-    subprocess.run(["git", "commit", "-m" , f"{str(prompt)}"])
+    subprocess.run(["git", "commit", "-m", f"{str(prompt)}"])
 
 
 if __name__ == "__main__":
-    print("▲ Welcome to AICommits!")
+    print("Welcome to AICommits!")
     main()
