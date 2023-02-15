@@ -129,3 +129,5 @@ dmypy.json
 .pyre/
 .env
 .vscode/
+tests/
+test.yml

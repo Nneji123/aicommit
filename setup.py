@@ -53,7 +53,7 @@ setup(
     long_description=get_long_description(),
     long_description_content_type="text/markdown",
     author="Ifeanyi Nneji",
-    author_email="ifeanyinneji@gmail.com",
+    author_email="ifeanyinneji777@gmail.com",
     packages=get_packages("aicommit"),
     python_requires=">=3.7",
     include_package_data=True,
