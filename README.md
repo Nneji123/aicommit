@@ -17,8 +17,6 @@ The generated commit message is presented to the user who has the option to acce
 The script requires an OpenAI API key, which can be obtained from the OpenAI website.
 
 
-
-
 # Dependencies
 
     Python 3.6 or higher
