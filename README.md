@@ -7,7 +7,7 @@
 [![MIT licensed](https://img.shields.io/badge/license-MIT-green.svg)](https://raw.githubusercontent.com/Nneji123/aicommit/LICENSE)
 
 
-AICommits - An AI-powered git commit message generator written in python. Inspired by @Nutlope(https://github.com/Nutlope/aicommits)
+AICommits - An AI-powered git commit message generator written in python. Inspired by [@Nutlope](https://github.com/Nutlope/aicommits)
 
 # Description
 
@@ -31,14 +31,28 @@ The script requires an OpenAI API key, which can be obtained from the OpenAI web
 
 The script has the following shortcomings:
 
-    The generated commit message may not always be suitable for the changes being committed.
-    The script depends on an external service (OpenAI) and requires an API key.
-    The generated commit message may not be human-readable or make sense in the context of the changes being committed.
-    The script may generate commit messages that do not follow the best practices for writing commit messages.
+1. The generated commit message may not always be suitable for the changes being committed.
+    
+2. The script depends on an external service (OpenAI) and requires an API key.
+   
+3. The generated commit message may not be human-readable or make sense in the context of the changes being committed.
+    
+4. The script may generate commit messages that do not follow the best practices for writing commit messages.
+
+However, these shortcomings can be addressed by improving the script and the model used to generate the commit messages.
 
 # Installation and Usage
 
-To use AICommits, install aicommit from pypi by running:
+To use AICommits, do the following: 
+
+1. Export your OpenAI API key as an environment variable by running:
+
+```bash
+export OPENAI_API_KEY=YOUR_API_KEY
+```
+
+
+2. install aicommit from pypi by running:
 
 ```bash
 pip install aicommit
@@ -48,15 +62,20 @@ Then, run the script using the command `aicommit`.
 
 
 The script will prompt you to confirm the generated commit message. If you accept the message, the changes will be committed using the generated message.
-Install from Source
+
+## Install from Source
 
 To install AICommits from source, follow these steps:
 
-    Clone the repository using the command git clone https://github.com/nneji123/aicommit.git.
-    Navigate to the project directory using the command `cd aicommit`.
-    Install the required dependencies by running pip install -r requirements.txt.
-    Set your OpenAI API key as an environment variable by running export OPENAI_API_KEY=YOUR_API_KEY.
-    Run the script using the command `python "src/ai_commits.py"`.
+1. Clone the repository using the command git clone https://github.com/nneji123/aicommit.git.
+    
+2. Navigate to the project directory using the command `cd aicommit`.
+
+3. Install the required dependencies by running pip install -r requirements.txt.
+
+4. Set your OpenAI API key as an environment variable by running export OPENAI_API_KEY=YOUR_API_KEY.
+    
+5. Run the script using the command `python "src/ai_commits.py"`.
 
 The script will prompt you to confirm the generated commit message. If you accept the message, the changes will be committed using the generated message.
 
