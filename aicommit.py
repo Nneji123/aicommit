@@ -90,9 +90,9 @@ def main():
         print(prompt)
         sys.exit(1)
 
-    subprocess.check_output(f"git commit -m '{prompt}'", shell=True)
+    subprocess.run(["git", "commit", "-m" , f"{str(prompt)}"])
 
 
-
-print("▲ Welcome to AICommits!")
-main()
+if __name__ == "__main__":
+    print("▲ Welcome to AICommits!")
+    main()
