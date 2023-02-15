@@ -55,7 +55,7 @@ export OPENAI_API_KEY=YOUR_API_KEY
 2. install aicommit from pypi by running:
 
 ```bash
-pip install ai_commit
+pip install ai_commits
 ```
 
 Then, run the script using the command `aicommit`.
