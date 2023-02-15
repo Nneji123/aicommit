@@ -94,5 +94,5 @@ def main():
 
 
 if __name__ == "__main__":
-    print("Welcome to AICommits")
+    print("Welcome to AICommits!")
     main()
