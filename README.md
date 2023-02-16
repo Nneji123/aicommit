@@ -38,19 +38,16 @@ The script requires an OpenAI API key, which can be obtained from the OpenAI web
     inquirer 3.7.0
     python-dotenv 0.19.1
 
-# Shortcomings
+# Features
 
-The script has the following shortcomings:
+In this version, AICommit provides the following features:
 
-1. The generated commit message may not always be suitable for the changes being committed.
+- Automatic generation of commit messages based on the diff of staged changes.
     
-2. The script depends on an external service (OpenAI) and requires an API key.
-   
-3. The generated commit message may not be human-readable or make sense in the context of the changes being committed.
-    
-4. The script may generate commit messages that do not follow the best practices for writing commit messages.
-
-However, these shortcomings can be addressed by improving the script and the model used to generate the commit messages.
+- Support for conventional commit messages.
+- Language selection for generated commit messages.
+- User selection of generated commit messages.
+- Support for specifying diff per file.
 
 # Installation and Usage
 
@@ -71,8 +68,13 @@ pip install ai_commits
 
 Then, run the script using the command `aicommit`.
 
+This will prompt AICOMMIT to generate up to 5 commit messages based on the diff of staged changes. The user can then select one of the generated commit messages to use as the commit message for their changes.
 
-The script will prompt you to confirm the generated commit message. If you accept the message, the changes will be committed using the generated message.
+If the --diff-per-file flag is included, AICOMMIT will generate separate commit messages for each file.
+
+If the --conventional flag is included, AICOMMIT will generate commit messages in conventional commit format.
+
+If the --language flag is included, AICOMMIT will generate commit messages in the specified language.
 
 ## Install from Source
 
