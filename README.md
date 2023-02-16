@@ -1,12 +1,23 @@
-# AICommit
+<div align="center">
+  <div>
+    <img src=".github/logo.png" alt="AI Commits"/>
+    <!-- <h1 align="center">AICommit</h1> -->
+  </div>
+	<p>An AI-powered git commit message generator written in python. Inspired by @Nutlope</p>
+  <a href="https://twitter.com/neji_14">
+    <img src="https://img.shields.io/twitter/follow/nutlope?style=flat&label=neji_14&logo=twitter&color=0bf&logoColor=fff" alt="Ifeanyi Nneji Follower Count" />
+  </a>
+</div>
+
+
 
 [![Pypi](https://img.shields.io/pypi/v/ai-commits.svg)](https://pypi.org/project/ai-commits/)
 [![PyPI - Python](https://img.shields.io/badge/python-3.6%20|%203.7%20|%203.8-blue.svg)](https://pypi.org/project/ai-commits/)
-<!-- [![Downloads](https://pepy.tech/badge/ai-commits)](https://pepy.tech/project/ai-commits) -->
+[![Downloads](https://static.pepy.tech/badge/ai-commits)](https://pepy.tech/project/ai-commits)
 [![MIT licensed](https://img.shields.io/badge/license-MIT-green.svg)](https://raw.githubusercontent.com/Nneji123/aicommit/LICENSE)
 
 
-AICommit - An AI-powered git commit message generator written in python. Inspired by [@Nutlope](https://github.com/Nutlope/aicommits)
+
 
 # Description
 
@@ -75,6 +86,32 @@ To install AICommits from source, follow these steps:
 5. Run the script using the command `python "src/ai_commits.py"`.
 
 The script will prompt you to confirm the generated commit message. If you accept the message, the changes will be committed using the generated message.
+
+# Changelog
+## v1.0.0 (2023-02-16)
+
+- Added support for generating commit messages in multiple languages
+
+- Improved performance when generating commit messages for large diffs
+    
+- Added ability to select from multiple generated commit messages using the inquirer library
+    
+- Fixed various bugs and improved error handling
+
+v0.0.5 (2023-02-15)
+
+- Fixed a bug that caused the script to fail when no changes were staged
+
+v0.0.4 [Initial Release] (2023-02-15)
+
+- Initial release of aicommits
+- Supports generating conventional commit messages
+- Supports generating commit messages based on the changes in the staged files
+- Uses OpenAI's GPT-3 to generate commit messages
+
+
+# Contributing
+Open an issue or submit a pull request if you want to contribute to the project.
 
 # License
 [MIT](https://github.com/Nneji123/aicommit/LICENSE/)
