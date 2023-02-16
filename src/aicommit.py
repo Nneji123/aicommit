@@ -4,8 +4,8 @@ import sys
 
 import inquirer
 from dotenv import load_dotenv
-from .utils import generate_commit_messages, get_diff
 
+from .utils import generate_commit_messages, get_diff
 
 load_dotenv()
 
@@ -34,12 +34,18 @@ def main():
     # Check for flags
     if len(sys.argv) > 1:
         if "--help" in sys.argv:
-            print("Usage: python git_ai_commit.py [--diff-per-file] [--conventional] [--language <language>] [--choice <choice>]\n")
+            print(
+                "Usage: python git_ai_commit.py [--diff-per-file] [--conventional] [--language <language>] [--choice <choice>]\n"
+            )
             print("Flags:")
             print("  --diff-per-file     Generate commit message per changed file")
             print("  --conventional      Use conventional commit format")
-            print("  --language          Language for generated commit message (default: en)")
-            print("  --choice            Choose from 5 different generated commit messages (default: 0)\n")
+            print(
+                "  --language          Language for generated commit message (default: en)"
+            )
+            print(
+                "  --choice            Choose from 5 different generated commit messages (default: 0)\n"
+            )
             sys.exit(0)
 
         flags = sys.argv[1:]
@@ -52,11 +58,11 @@ def main():
 
         if "--language" in flags:
             language_index = flags.index("--language")
-            commit_language = flags[language_index+1]
+            commit_language = flags[language_index + 1]
 
         if "--choice" in flags:
             choice_index = flags.index("--choice")
-            commit_choice = int(flags[choice_index+1])
+            commit_choice = int(flags[choice_index + 1])
 
     diff = get_diff(diff_per_file)
 
@@ -68,25 +74,35 @@ def main():
 
     # Accounting for GPT-3's input requirement of 4k tokens (approx 8k chars)
     if len(diff) > 8000:
-        print("The diff is too large to write a commit message for. Please split your changes into multiple commits.")
+        print(
+            "The diff is too large to write a commit message for. Please split your changes into multiple commits."
+        )
         sys.exit(1)
 
     choices = generate_commit_messages(OPENAI_KEY, diff, commit_language)
-    
+
     if len(choices) == 0:
         print("No commit message generated.")
         sys.exit(1)
 
     if commit_choice < 0 or commit_choice >= len(choices):
-        print(f"Invalid choice '{commit_choice}'. Choose a number between 0 and {len(choices)-1}.")
+        print(
+            f"Invalid choice '{commit_choice}'. Choose a number between 0 and {len(choices)-1}."
+        )
         sys.exit(1)
 
-    # commit_message = choices[commit_choice]
     commit_messages = generate_commit_messages(OPENAI_KEY, diff, commit_language, 5)
 
-
     if commit_conventional:
-        conventional_choices = ["feat", "fix", "docs", "style", "refactor", "test", "chore"]
+        conventional_choices = [
+            "feat",
+            "fix",
+            "docs",
+            "style",
+            "refactor",
+            "test",
+            "chore",
+        ]
         questions = [
             inquirer.List(
                 "conventional_choice",
@@ -94,7 +110,7 @@ def main():
                 choices=conventional_choices,
             )
         ]
-        
+
     message_choices = [f"{i+1}. {msg}" for i, msg in enumerate(commit_messages)]
     questions = [
         inquirer.List(
@@ -106,8 +122,7 @@ def main():
     answers = inquirer.prompt(questions)
 
     # Get the selected commit message
-    selected_message = commit_messages[int(answers["message_choice"][0])-1]
-
+    selected_message = commit_messages[int(answers["message_choice"][0]) - 1]
 
     print(f"Commit Message:\n{selected_message}")
 
@@ -121,6 +136,9 @@ def main():
             )
         ]
     )
+    
+    
+
 
     if confirmation_message["use_commit_message"] == "n":
         print("Commit message has not been committed.")

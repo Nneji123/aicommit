@@ -4,8 +4,6 @@
     <!-- <h1 align="center">AICommit</h1> -->
   </div>
 	<p>An AI-powered git commit message generator written in python. Inspired by @Nutlope</p>
-  <a href="https://twitter.com/neji_14">
-    <img src="https://img.shields.io/twitter/follow/nutlope?style=flat&label=neji_14&logo=twitter&color=0bf&logoColor=fff" alt="Ifeanyi Nneji Follower Count" />
   </a>
 </div>
 
@@ -119,5 +117,5 @@ v0.0.4 [Initial Release] (2023-02-15)
 Open an issue or submit a pull request if you want to contribute to the project.
 
 # License
-[MIT](https://github.com/Nneji123/aicommit/LICENSE/)
+[MIT](https://github.com/Nneji123/aicommit/LICENSE.md)
 

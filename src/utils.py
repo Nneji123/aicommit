@@ -1,13 +1,12 @@
 import subprocess
 
-
 import openai
 from openai.error import APIConnectionError
 
 
-
-
-def generate_commit_messages(api_key: str, prompt: str, language:str = "english", num_messages:int = 5) -> list:
+def generate_commit_messages(
+    api_key: str, prompt: str, language: str = "english", num_messages: int = 5
+) -> list:
     try:
         openai.api_key = api_key
         model_engine = "text-davinci-002"
