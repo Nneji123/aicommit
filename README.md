@@ -27,6 +27,9 @@ The generated commit message is presented to the user who has the option to acce
 
 The script requires an OpenAI API key, which can be obtained from the OpenAI website.
 
+![ezgif com-video-to-gif](https://user-images.githubusercontent.com/101701760/219174199-d7b18c4a-8f81-42ec-b4ee-2b6093572a7f.gif)
+
+
 
 # Dependencies
 
